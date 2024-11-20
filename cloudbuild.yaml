@@ -1,0 +1,16 @@
+steps:
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/reac-442207/react', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/reac-442207/react']
+# Deploy container image to Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'react', '--image', 'gcr.io/reac-442207/react', '--region', 'us-central1', '--platform', 'managed','--port','80']
+images:
+- gcr.io/flask-442205/flask
+options:
+  logging: CLOUD_LOGGING_ONLY  # This is the required logging configuration
+  
