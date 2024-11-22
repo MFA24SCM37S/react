@@ -66,11 +66,11 @@ const repositories = [
     value: "pymilvus",
   },
   { 
-    key: "X golang/go google/go-github langchain-ai/langchain langchain-ai/langgraph microsoft/autogen openai/openai-cookbook elastic/elasticsearch milvus-io/pymilvus/ keras-team/keras",
+    key: "X langchain-ai/langchain langchain-ai/langgraph microsoft/autogen openai/openai-cookbook elastic/elasticsearch milvus-io/pymilvus",
     value: "Stars of every repo",
   },
   {
-    key: "Y golang/go google/go-github langchain-ai/langchain langchain-ai/langgraph microsoft/autogen openai/openai-cookbook elastic/elasticsearch milvus-io/pymilvus/",
+    key: "Y langchain-ai/langchain langchain-ai/langgraph microsoft/autogen openai/openai-cookbook elastic/elasticsearch milvus-io/pymilvus",
     value: "Forks of every repo",
   }
 ];
@@ -253,19 +253,19 @@ export default function Home() {
 
             {/* Render barchart component for monthly created issues for a selected repositories*/}
             {flag && <BarCharts
-              title={`Monthly Created Issues for ${repository.value} in last 2 years`}
+              title={`Monthly Created Issues: ${repository.value} in last 2 years`}
               data={githubRepoData?.created}
             />}
 
             {/* Render barchart component for weekly closed issues for a selected repositories*/}
             {flag && <BarCharts
-              title={`Weekly Closed Issues for ${repository.value} in last 2 years`}
+              title={`Weekly Closed Issues: ${repository.value} in last 2 years`}
               data={githubRepoData?.closed_weekly}
             />}
 
             {/* Render stackbar component for created and closed issues*/}
             {flag && <StackBar
-              title={`Created and Closed Issues for ${repository.value} in last 2 years`}
+              title={`Created and Closed Issues: ${repository.value} in last 2 years`}
               data={githubRepoData?.created}
               data2={githubRepoData?.closed}
             />}
@@ -274,12 +274,12 @@ export default function Home() {
 
             
             {isStars && <StarBarCharts
-              title={`Number of stars for each repository`}
+              title={`No. of stars for each repo`}
               data={githubRepoData?.stars}
               
             />}
             {isForks && <ForkBarCharts
-              title={`Number of forks for each repository`}
+              title={`No. of forks for each repos`}
               data={githubRepoData?.forks}
               
             />}
@@ -292,7 +292,7 @@ export default function Home() {
                 
                 <img
                   src={githubRepoData?.createdAtImageUrls?.day_max_issue_created}
-                  alt={"The day of the week maximum number of issues created"}
+                  alt={"The day of the week maximum no of issues created"}
                   loading={"lazy"}
                 />
               </div>
@@ -305,7 +305,7 @@ export default function Home() {
                 
                 <img
                   src={githubRepoData?.createdAtImageUrls?.day_max_issue_closed}
-                  alt={"The day of the week maximum number of issues Closed"}
+                  alt={"The day of the week maximum no. of issues Closed"}
                   loading={"lazy"}
                 />
               </div>
@@ -319,7 +319,7 @@ export default function Home() {
                 
                 <img
                   src={githubRepoData?.createdAtImageUrls?.month_max_issues_closed}
-                  alt={"The month of the year that has maximum number of issues closed"}
+                  alt={"The month of the year that has maximum no.. of issues closed"}
                   loading={"lazy"}
                 />
               </div>
@@ -552,7 +552,7 @@ export default function Home() {
                   src={
                     githubRepoData?.pullReqImageUrls?.lstm_generated_image_url
                   }
-                  alt={"LSTM Generated Data for Pull Requests"}
+                  alt={"LSTM Generated Data for PRs"}
                   loading={"lazy"}
                 />
               </div>
@@ -563,7 +563,7 @@ export default function Home() {
                 {/* Render the all issues data image for Pull Requests*/}
                 <img
                   src={githubRepoData?.pullReqImageUrls?.all_issues_data_image}
-                  alt={"All Issues Data for Pull Requests"}
+                  alt={"All Issues Data for PRs"}
                   loading={"lazy"}
                 />
               </div>
@@ -703,7 +703,7 @@ export default function Home() {
                 {/* Render the model loss image Closed AT  */}
                 <img
                   src={githubRepoData?.fb_pullReqImageUrls?.fbprophet_forecast_url}
-                  alt={"Forecast of Pull Request"}
+                  alt={"Forecast of PRs"}
                   loading={"lazy"}
                 />
               </div>
@@ -716,7 +716,7 @@ export default function Home() {
                   src={
                     githubRepoData?.fb_pullReqImageUrls?.fbprophet_forecast_components_url
                   }
-                  alt={"Forecast Components of Pull Request"}
+                  alt={"Forecast Components of PRs"}
                   loading={"lazy"}
                 />
               </div>
@@ -844,7 +844,7 @@ export default function Home() {
                 {/* Render the model loss image Pull Request  */}
                 <img
                   src={githubRepoData?.stat_pullReqImageUrls?.stats_observation_url}
-                  alt={"Observation Graph of Pull Request Issues"}
+                  alt={"Observation Graph of PR Issues"}
                   loading={"lazy"}
                 />
               </div>
@@ -857,7 +857,7 @@ export default function Home() {
                   src={
                     githubRepoData?.stat_pullReqImageUrls?.stats_forecast_url
                   }
-                  alt={"Forecast Components of Pull Request"}
+                  alt={"Forecast Components of PRs"}
                   loading={"lazy"}
                 />
               </div>
